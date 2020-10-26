@@ -1,5 +1,5 @@
 //autoEmail.js
-// const twitter = require('../utils/twitter');
+const dataFetch = require('../utils/dataFetch');
 const sendGrid = require('../utils/sendGrid');
 
 exports.handler = async (event, context)=>{
@@ -14,11 +14,11 @@ exports.handler = async (event, context)=>{
 
         //Get data 
         // Will call a function here to get the data
-        //  const tweets = await twitter();
+        const data = await dataFetch();
 
         //Send email if there are tweets available
         //  if(tweets.length > 0) await sendGrid(tweets);
-        await sendGrid('This is a test email');
+        await sendGrid(data);
         // success
         return {statusCode: 200}
             

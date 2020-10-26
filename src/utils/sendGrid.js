@@ -5,11 +5,11 @@ const createHtmlEmail = require('./buildmail');
 
 sgMail.setApiKey(process.env.GATSBY_SENDGRID_KEY); 
 
-module.exports = (message) => {
+module.exports = (data) => {
     return sgMail.send({ 
             to: process.env.GATSBY_SEND_EMAIL,
             from: process.env.GATSBY_MY_EMAIL,
             subject: 'Hock-Hocking-report',
-            html: createHtmlEmail(message), //b) create html email & send
+            html: createHtmlEmail(data), //b) create html email & send
             });
 }
