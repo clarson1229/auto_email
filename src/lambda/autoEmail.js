@@ -9,7 +9,7 @@ exports.handler = async (event, context)=>{
         if(!event.headers.authorization)  return {statusCode: 404};
 
         //check for valid authorization value
-        const basicAuth = (new Buffer.alloc(`${process.env.GATSBY_AUTH_USER}:${process.env.GATSBY_AUTH_PASS}`)).toString('base64')
+        const basicAuth = (new Buffer.from(`${process.env.GATSBY_AUTH_USER}:${process.env.GATSBY_AUTH_PASS}`)).toString('base64')
         if(event.headers.authorization.split(' ')[1] !== basicAuth) return {statusCode: 404};
 
         //Get data 
