@@ -16,8 +16,7 @@ exports.handler = async (event, context)=>{
         // Will call a function here to get the data
         const data = await fetchData();
 
-        //Send email if there are tweets available
-        //  if(tweets.length > 0) await sendGrid(tweets);
+        
         await sendGrid(data);
         // success
         return {statusCode: 200}

@@ -97,7 +97,7 @@ module.exports = async (data) => {
         var tempFullData= {'error': false, 'errorMsg': '', 'flowRate': dataArray, 'flowRateUnits': 'CFS'}
         var totalVolume=calcVolumeData15Min(tempFullData.flowRate, tempFullData.flowRateUnits); // here 
         var avgFlowRate = calcAvgFlowRate(tempFullData.flowRate)
-        return {'totalVolume': totalVolume, 'avgFlowRate': avgFlowRate}
+        return {'error': false, 'totalVolume': totalVolume.totalFlow, 'avgFlowRate': avgFlowRate}
     }else{
         return {'error': true, 'errorMsg': dataResult.errorMsg, 'errorObject': dataResult.errorObject}
     }
