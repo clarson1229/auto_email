@@ -1,4 +1,4 @@
-import FetchDWRHock from './FetchDWRHock.js';
+import FetchDWRHock from './fetchDWRHock.js';
 
 export default async function dataFetch() {
     function getDate(typeDate){
@@ -92,5 +92,5 @@ export default async function dataFetch() {
         return {'error': true, 'errorMsg': dataResult.errorMsg, 'errorObject': dataResult.errorObject}
     }
 
-    
+
 }
