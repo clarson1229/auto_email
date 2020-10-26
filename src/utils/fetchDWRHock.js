@@ -1,8 +1,6 @@
-import axios from 'axios';
+const axios = require('axios');
 
-
-export default async function fetchDWRHock(fullLink ) {
-    
+module.exports = (fullLink) => { 
     return await axios(fullLink).then( result => {
       console.log('Successful Get, Results: ');
       return ({'error': false, 'errorMsg': '', 'data': result.data.ResultList});

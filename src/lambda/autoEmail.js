@@ -1,5 +1,5 @@
 //autoEmail.js
-const dataFetch = require('../utils/dataFetch');
+const fetchData = require('../utils/dataFetch');
 const sendGrid = require('../utils/sendGrid');
 
 exports.handler = async (event, context)=>{
@@ -14,7 +14,7 @@ exports.handler = async (event, context)=>{
 
         //Get data 
         // Will call a function here to get the data
-        const data = await dataFetch();
+        const data = await fetchData();
 
         //Send email if there are tweets available
         //  if(tweets.length > 0) await sendGrid(tweets);
