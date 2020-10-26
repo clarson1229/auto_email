@@ -76,7 +76,7 @@ function calcAvgFlowRate(dataArray){
     return avgFlowRate;
 }
 
-module.exports = (data) => { 
+module.exports = async (data) => { 
     var dateOne = getDate('today');
     var dateTwo = getDate('past10');
 

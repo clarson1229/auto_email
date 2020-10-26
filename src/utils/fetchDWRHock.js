@@ -1,6 +1,6 @@
 const axios = require('axios');
 
-module.exports = (fullLink) => { 
+module.exports = async (fullLink) => { 
     return await axios(fullLink).then( result => {
       console.log('Successful Get, Results: ');
       return ({'error': false, 'errorMsg': '', 'data': result.data.ResultList});
