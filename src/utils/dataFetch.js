@@ -75,6 +75,15 @@ function calcAvgFlowRate(dataArray){
     const avgFlowRate = totalFlowRate / dataArray.length; 
     return avgFlowRate;
 }
+function createDate(dateData){
+    const yearDateMonth = dateData.split('-');
+    const date = yearDateMonth[2];
+    const newDate = parseInt(date);
+    const month = yearDateMonth[1];
+    const newMonth = parseInt(month);;
+    const year = yearDateMonth[0];
+    return( `${newMonth<10?`0${newMonth}`:`${newMonth}`}%2F${newDate<10?`0${newDate}`:`${newDate}`}%2F${year}`); 
+}
 
 module.exports = async (data) => { 
     var dateOne = getDate('today');
