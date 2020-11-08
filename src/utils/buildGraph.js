@@ -54,7 +54,7 @@ module.exports = async (data) => {
                     {
                         type: 'time',
                         time: {
-                            unit: xAxeslabels.axesUnit,
+                            unit: 'day',
                             displayFormats: { 
                                 minute: 'h:mm a',
                                 day: 'M/D',
