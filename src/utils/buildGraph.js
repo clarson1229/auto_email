@@ -1,4 +1,3 @@
-const ChartJS = require('chart.js');
 const { CanvasRenderService } = require('chartjs-node-canvas');
 const width = 400;
 const height = 400;
