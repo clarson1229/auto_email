@@ -1,4 +1,5 @@
 const { CanvasRenderService } = require('chartjs-node-canvas');
+const chartjs = require('chart.js');
 const width = 400;
 const height = 400;
 const chartCallback = (ChartJS) => {
@@ -14,7 +15,7 @@ const chartCallback = (ChartJS) => {
         // chart implementation
     });
 };
-const canvasRenderService = new CanvasRenderService(width, height, chartCallback);
+const canvasRenderService = new CanvasRenderService(width, height, chartCallback(chartjs));
 
 module.exports = async (data) => { 
     const configuration = {
