@@ -73,10 +73,10 @@ module.exports = (data) => {
     if (data.error === false){
         dataMap= createRows15(data);
         const rows = dataMap.dwrData.map( (item, index) => 
-        <tr  key={`Row-${index}`}>
-          <th >{item.dateTime}</th>
-          <th >{item.measure.toFixed(2)} {data.dwrData.flowRateUnits} </th>
-        </tr>
+        `<tr  key=${`Row-${index}`}>
+          <th >${item.dateTime}</th>
+          <th >${item.measure.toFixed(2)} ${data.dwrData.flowRateUnits} </th>
+        </tr>`
         )
 
         bodyElement=`
