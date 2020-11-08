@@ -4,14 +4,15 @@ module.exports = async (data) => {
     const myChart = new QuickChart();
     const dwrdataMeasures = data.flowRate.map(item=> {return (item.measure)});
     const dwrdataLabels = data.flowRate.map(item=> {return (item.dateTime)});
-    
+    const tempLabel  = dwrdataLabels.splice(0,100);
+    const tempMeasure= dwrdataMeasures.splice(0,100);
     
     const chartData= {
-        labels: dwrdataLabels, 
+        labels: tempLabel, 
         datasets: [
             {
                 label: `Hocking Discharge in `,
-                data: dwrdataMeasures,
+                data: tempMeasure,
                 // backgroundColor: '#0000ff', // color of points 
                 // borderColor: '#0000ff',   // color of line
                 // borderWidth: 2, 
@@ -55,11 +56,6 @@ module.exports = async (data) => {
                         type: 'time',
                         time: {
                             unit: 'day',
-                            displayFormats: { 
-                                minute: 'h:mm a',
-                                day: 'M/D',
-                                month: 'MMM YYYY',
-                            },
                             distribution: 'series'
                         },
                         gridLines: {
@@ -77,7 +73,7 @@ module.exports = async (data) => {
                     }
                 ]
             }}
-    }).setWidth(400).setHeight(500);
+    }).setWidth(800).setHeight(800);
 
     // You can send the URL to someone...
     const chartImageUrl = myChart.getUrl();
