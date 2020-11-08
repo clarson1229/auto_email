@@ -64,11 +64,15 @@ function createRows15(dataMap){
     // combine data
     return ({'dwrData': dwrConvertedMap})
   }
-module.exports = (data) => {
+module.exports = (data, graphURL) => {
     
     //Wrap tweet elements in a div
-    
-
+    let graphImg=' '
+    if (graphURL){
+      graphImg = `
+        <img src=${graphURL} width="500" height="600" />
+      ` 
+    }
     let bodyElement = ' '
     if (data.error === false){
         dataMap= createRows15(data);
@@ -105,7 +109,8 @@ module.exports = (data) => {
   
     let email = `   
         <div style = "width: 40rem; font-size: 1.2rem; margin: 0 auto">
-            ${bodyElement}
+          ${graphImg}
+          ${bodyElement}
         </div>
     
     `;

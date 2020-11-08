@@ -1,6 +1,7 @@
 //autoEmail.js
 const fetchData = require('../utils/dataFetch');
 const sendGrid = require('../utils/sendGrid');
+const buildGraph = require('../utils/buildGraph');
 
 exports.handler = async (event, context)=>{
     try{
@@ -15,9 +16,9 @@ exports.handler = async (event, context)=>{
         //Get data 
         // Will call a function here to get the data
         const data = await fetchData();
-
+        const graphURL = await buildGraph(data.dwrData)
         
-        await sendGrid(data);
+        await sendGrid(data, graphURL);
         // success
         return {statusCode: 200}
             
