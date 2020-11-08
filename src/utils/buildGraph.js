@@ -4,15 +4,14 @@ module.exports = async (data) => {
     const myChart = new QuickChart();
     const dwrdataMeasures = data.flowRate.map(item=> {return (item.measure)});
     const dwrdataLabels = data.flowRate.map(item=> {return (item.dateTime)});
-    console.log('labels', dwrdataLabels)
-    console.log('measures', dwrdataMeasures)
+    
     
     const chartData= {
-        labels: ['1','2','3','4'], 
+        labels: dwrdataLabels, 
         datasets: [
             {
                 label: `Hocking Discharge in `,
-                data: [2,4,6,8],
+                data: dwrdataMeasures,
                 // backgroundColor: '#0000ff', // color of points 
                 // borderColor: '#0000ff',   // color of line
                 // borderWidth: 2, 
@@ -26,8 +25,59 @@ module.exports = async (data) => {
     // ${dData.flowRateUnits}
     myChart.setConfig({
         type: 'line',
-        data: chartData
-    }).setWidth(300).setHeight(150);
+        data: chartData, 
+        options: {
+            scales: {
+                yAxes: [
+                    {   
+                        id: 'discharge_point',
+                        type: 'linear',
+                        scaleLabel:{
+                            display:true,
+                            labelString: 'CFS',
+                            // fullDWRdata.flowRateUnits,
+                            fontColor: '#0000ff',
+                            fontSize: '14',
+                            padding: '8',
+                        },
+                        ticks: {
+                            // stepSize: .05,
+                            fontSize: '14',
+                            fontColor: '#0000ff'
+                        }, 
+                        gridLines: {
+                            display: false
+                        }, 
+                    }
+                ], 
+                xAxes:[
+                    {
+                        type: 'time',
+                        time: {
+                            unit: xAxeslabels.axesUnit,
+                            displayFormats: { 
+                                minute: 'h:mm a',
+                                day: 'M/D',
+                                month: 'MMM YYYY',
+                            },
+                            distribution: 'series'
+                        },
+                        gridLines: {
+                            display: false
+                        },
+                        ticks: {
+                            fontSize: '15',
+                        }, 
+                        scaleLabel:{
+                            display:true,
+                            labelString: 'Date',
+                            fontSize: '16',
+                            fontColor: '#000'
+                        }
+                    }
+                ]
+            }}
+    }).setWidth(400).setHeight(500);
 
     // You can send the URL to someone...
     const chartImageUrl = myChart.getUrl();
