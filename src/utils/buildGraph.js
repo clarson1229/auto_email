@@ -1,24 +1,34 @@
-const { CanvasRenderService } = require('chartjs-node-canvas');
-const chartjs = require('chart.js');
-const width = 400;
-const height = 400;
-const chartCallback = (ChartJS) => {
+// const { CanvasRenderService } = require('chartjs-node-canvas');
+// const chartjs = require('chart.js');
+// const width = 400;
+// const height = 400;
 
-    // Global config example: https://www.chartjs.org/docs/latest/configuration/
-    ChartJS.defaults.global.elements.rectangle.borderWidth = 2;
-    // Global plugin example: https://www.chartjs.org/docs/latest/developers/plugins.html
-    ChartJS.plugins.register({
-        // plugin implementation
-    });
-    // New chart type example: https://www.chartjs.org/docs/latest/developers/charts.html
-    ChartJS.controllers.MyType = ChartJS.DatasetController.extend({
-        // chart implementation
-    });
-};
-const canvasRenderService = new CanvasRenderService(width, height, chartCallback(chartjs));
+// const chartJsFactory = () => {
+//     const chartJS = require('chart.js');
+//     delete require.cache[require.resolve('chart.js')];
+//     return chartJS;
+// };
+// const chartCallback = (ChartJS) => {
+
+//     // Global config example: https://www.chartjs.org/docs/latest/configuration/
+//     ChartJS.defaults.global.elements.rectangle.borderWidth = 2;
+//     // Global plugin example: https://www.chartjs.org/docs/latest/developers/plugins.html
+//     ChartJS.plugins.register({
+//         // plugin implementation
+//     });
+//     // New chart type example: https://www.chartjs.org/docs/latest/developers/charts.html
+//     ChartJS.controllers.MyType = ChartJS.DatasetController.extend({
+//         // chart implementation
+//     });
+// };
+// const canvasRenderService = new CanvasRenderService(width, height, chartCallback(chartjs));
+const { createCanvas, loadImage } = require('canvas')
 
 module.exports = async (data) => { 
-    const configuration = {
+    const canvas = createCanvas(200, 200)
+    const ctx = canvas.getContext('2d')
+
+    var myChart = new Chart(ctx, {
         type: 'bar',
         data: {
             labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
@@ -34,7 +44,7 @@ module.exports = async (data) => {
                     'rgba(255, 159, 64, 0.2)'
                 ],
                 borderColor: [
-                    'rgba(255,99,132,1)',
+                    'rgba(255, 99, 132, 1)',
                     'rgba(54, 162, 235, 1)',
                     'rgba(255, 206, 86, 1)',
                     'rgba(75, 192, 192, 1)',
@@ -48,18 +58,13 @@ module.exports = async (data) => {
             scales: {
                 yAxes: [{
                     ticks: {
-                        beginAtZero: true,
-                        callback: (value) => '$' + value
+                        beginAtZero: true
                     }
                 }]
             }
         }
-    };
-    const image = await canvasRenderService.renderToBuffer(configuration);
-    const dataUrl = await canvasRenderService.renderToDataURL(configuration);
-    const stream = canvasRenderService.renderToStream(configuration);
-    
+    });
 
     
-    return dataUrl;
+    return myChart.toDataURL();
 }
