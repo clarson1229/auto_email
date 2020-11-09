@@ -129,10 +129,10 @@ module.exports = (data, graphURL) => {
     `
     let email = `   
         <div style = "width: 40rem; font-size: 1.2rem; margin: 0 auto">
-          ${header}
+          
           ${graphImg}
           ${bodyElement}
-          ${footer}
+          
 
         </div>
     

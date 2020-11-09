@@ -62,21 +62,21 @@ module.exports = async (data) => {
             "datasets": [{
                 "label":"Hock-Discharge", 
                 "data": dailyData.measures,
-                "fill": false,
+                "fill": "false",
                 "pointRadius": 0, 
-                "yAxisID": 'discharge_point'
+                // "yAxisID": 'discharge_point'
             }]
         },
         "options": {
-            "title": {
-                "text": 'Hock Hocking Mine Average Discharge', 
-                "display": true
-            },
+            // "title": {
+            //     "text": 'Hock Hocking Mine Average Discharge', 
+            //     "display": true
+            // },
             "scales": {
                 "yAxes": [{   
                     "type": 'linear',
                     "gridLines": {
-                        "display": false
+                        "display": "false"
                     },
                     // "scaleLabel":{
                     //     "display":true,
@@ -97,7 +97,7 @@ module.exports = async (data) => {
                         "unit": 'day'
                     },
                     "gridLines": {
-                            "display": false
+                            "display": "false"
                     },
                     // "ticks": {
                     //     "fontSize": '15',
