@@ -4,8 +4,8 @@ module.exports = async (data) => {
     const myChart = new QuickChart();
     const dwrdataMeasures = data.flowRate.map(item=> {return (item.measure)});
     const dwrdataLabels = data.flowRate.map(item=> {return (item.dateTime)});
-    const tempLabel  = dwrdataLabels.splice(0,25);
-    const tempMeasure= dwrdataMeasures.splice(0,25);
+    const tempLabel  = dwrdataLabels.splice(0,50);
+    const tempMeasure= dwrdataMeasures.splice(0,50);
     
     const chartData= {
         labels: tempLabel, 
@@ -52,7 +52,7 @@ module.exports = async (data) => {
                 }]
             }
         }
-    }).setWidth(1200).setHeight(600);
+    }).setWidth(1400).setHeight(600);
 
     // You can send the URL to someone...
     const chartImageUrl = myChart.getUrl();
