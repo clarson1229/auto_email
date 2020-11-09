@@ -4,8 +4,8 @@ module.exports = async (data) => {
     const myChart = new QuickChart();
     const dwrdataMeasures = data.flowRate.map(item=> {return (item.measure)});
     const dwrdataLabels = data.flowRate.map(item=> {return (item.dateTime)});
-    const tempLabel  = dwrdataLabels.splice(0,100);
-    const tempMeasure= dwrdataMeasures.splice(0,100);
+    const tempLabel  = dwrdataLabels.splice(0,25);
+    const tempMeasure= dwrdataMeasures.splice(0,25);
     
     const chartData= {
         labels: tempLabel, 
