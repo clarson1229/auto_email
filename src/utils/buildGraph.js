@@ -85,11 +85,11 @@ module.exports = async (data) => {
                         "fontSize": '14',
                         'padding': '8',
                     },
-                    // "ticks": {
-                    //     "display":true,
-                    //     "fontSize": '14',
-                    //     "fontColor": '#0000ff'
-                    // }, 
+                    "ticks": {
+                        "display":true,
+                        "fontSize": '14',
+                        "fontColor": '#0000ff'
+                    }, 
                 }],
                 "xAxes": [{
                     "type": 'time',
@@ -99,15 +99,15 @@ module.exports = async (data) => {
                     "gridLines": {
                             "display": "false"
                     },
-                    // "ticks": {
-                    //     "fontSize": '15',
-                    // },
-                    // "scaleLabel":{
-                    //     "display":true,
-                    //     "labelString": 'Date',
-                    //     "fontSize": '16',
-                    //     "fontColor": '#000'
-                    // },
+                    "ticks": {
+                        "fontSize": '15',
+                    },
+                    "scaleLabel":{
+                        "display":true,
+                        "labelString": 'Date',
+                        "fontSize": '16',
+                        "fontColor": '#000'
+                    },
                 }]
             }
         }
