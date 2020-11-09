@@ -68,6 +68,7 @@ module.exports = (data, graphURL) => {
     
     let header=`
       <div>
+        <p>Hock Hocking Mine Discharge Report</p>
         <p>Reporting Period</p>
         <p>From to </p>
       </div>
@@ -127,9 +128,12 @@ module.exports = (data, graphURL) => {
       </div>
     `
     let email = `   
-        <div style = "width: 40rem; font-size: 1.2rem; margin: 0 auto">
+        <div>
+          ${header}
           ${graphImg}
           ${bodyElement}
+          ${footer}
+
         </div>
     
     `;
