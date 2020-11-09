@@ -3,7 +3,7 @@ const QuickChart = require('quickchart-js');
 function createDailyFrom15(dwrData){
     // DWR
       // 15 min data to hourly to daily 
-    var item1,item2,item3,item4, count = 1, totalFlow = 0, hourCount=0, dailyArrayLabel=[], dailyArrayMeasure=[], ;
+    var item1,item2,item3,item4, count = 1, totalFlow = 0, hourCount=0, dailyArrayLabel=[], dailyArrayMeasure=[] ;
     
     if (dwrData.length%4 !== 0){
        dwrData.shift();// remove the first measure. 
