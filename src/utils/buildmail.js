@@ -66,6 +66,12 @@ function createRows15(dataMap){
   }
 module.exports = (data, graphURL) => {
     
+    let header=`
+      <div>
+        <p>Reporting Period</p>
+        <p>From to </p>
+      </div>
+    `
     //Wrap tweet elements in a div
     let graphImg=' '
     if (graphURL){
@@ -86,16 +92,18 @@ module.exports = (data, graphURL) => {
 
         bodyElement=`
             <div>
-                <p>total volume ${data.totalVolume} </p>
-                <p>average flowrate ${data.avgFlowRate} </p>
                 <div>
-                    <table style="width:100%">
-                      <tr>
-                          <th>Date</th>
-                          <th>Total Discharged</th>
-                      </tr>
-                      ${rows}
-                    </table>
+                  <p>Total Volume ${data.totalVolume}</p>
+                  <p>Average Flowrate ${data.avgFlowRate}</p>
+                </div>
+                <div>
+                  <table style="width:100%">
+                    <tr>
+                        <th>Date</th>
+                        <th>Total Discharged</th>
+                    </tr>
+                    ${rows}
+                  </table>
                 </div>
             </div>
        `
@@ -107,7 +115,17 @@ module.exports = (data, graphURL) => {
             </div>
        `
     }
-  
+    let footer=`
+      <div>
+        <p>MineWater LLC</p>
+        <p>10924 Leroy Drive</p>
+        <p>Northglenn, CO 80233 US</p>
+        <p>720-883-6700</p>
+        <p>jgh@minewater.com</p>
+        <p>www.minewater.com</p>
+        <p></p>
+      </div>
+    `
     let email = `   
         <div style = "width: 40rem; font-size: 1.2rem; margin: 0 auto">
           ${graphImg}
