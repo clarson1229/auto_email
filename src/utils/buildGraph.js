@@ -29,28 +29,28 @@ module.exports = async (data) => {
     //     data: chartData, 
     //     options: {
     //         scales: {
-    //             yAxes: [
-    //                 {   
-    //                     id: 'discharge_point',
-    //                     type: 'linear',
-    //                     scaleLabel:{
-    //                         display:true,
-    //                         labelString: 'CFS',
-    //                         // fullDWRdata.flowRateUnits,
-    //                         fontColor: '#0000ff',
-    //                         fontSize: '14',
-    //                         padding: '8',
-    //                     },
-    //                     ticks: {
-    //                         // stepSize: .05,
-    //                         fontSize: '14',
-    //                         fontColor: '#0000ff'
-    //                     }, 
-    //                     gridLines: {
-    //                         display: false
-    //                     }, 
-    //                 }
-    //             ], 
+                // yAxes: [
+                //     {   
+                //         id: 'discharge_point',
+                //         type: 'linear',
+                //         scaleLabel:{
+                //             display:true,
+                //             labelString: 'CFS',
+                //             // fullDWRdata.flowRateUnits,
+                //             fontColor: '#0000ff',
+                //             fontSize: '14',
+                //             padding: '8',
+                //         },
+                //         ticks: {
+                //             // stepSize: .05,
+                //             fontSize: '14',
+                //             fontColor: '#0000ff'
+                //         }, 
+                //         gridLines: {
+                //             display: false
+                //         }, 
+                //     }
+                // ], 
     //             xAxes:[
     //                 {
     //                     type: 'time',
@@ -88,6 +88,25 @@ module.exports = async (data) => {
                 "label":"Hock-Discharge", 
                 "data": tempMeasure
             }]
+        },
+        "options": {
+            "scales": {
+                "yAxes": [{   
+                    "type": 'linear',
+                    "gridLines": {
+                        "display": false
+                    }, 
+                }],
+                "xAxes": [{
+                    "type": 'time',
+                    "time": {
+                        "unit": 'day'
+                    },
+                    "gridLines": {
+                            "display": false
+                    },
+                }]
+            }
         }
     }
     console.log(gConfig)
