@@ -46,15 +46,17 @@ function createDailyFrom15(dwrData){
         hourCount=0;
       }
     })
-    var dwrConvertedMap = dailyArray.map(item => ({'dateTime': item.dateTime, 'measure': item.measure, 'dataType': 'DISCHARGE_TOTAL'}))
+    // var dwrConvertedMap = dailyArray.map(item => ({'dateTime': item.dateTime, 'measure': item.measure, 'dataType': 'DISCHARGE_TOTAL'}))
     
   
     // combine data
-    return ({'dwrData': dwrConvertedMap})
+    return ({'dwrData': dailyArray})
   }
 module.exports = async (data) => {
     const myChart = new QuickChart();
+    console.log('data before ', data.flowRate)
     const dailyData = createDailyFrom15(data.flowRate)
+    console.log('dailyData', dailyData)
     const dwrdataMeasures = dailyData.map(item=> {return (item.measure)});
     const dwrdataLabels = dailyData.map(item=> {return (item.dateTime)});
     
