@@ -52,7 +52,7 @@ module.exports = async (data) => {
                 }]
             }
         }
-    }).setWidth(4200).setHeight(600);
+    }).setWidth(1200).setHeight(600);
 
     // You can send the URL to someone...
     const chartImageUrl = myChart.getUrl();
