@@ -78,13 +78,13 @@ module.exports = async (data) => {
                     "gridLines": {
                         "display": "false"
                     },
-                    // "scaleLabel":{
-                    //     "display":true,
-                    //     "labelString": "CFS",
-                    //     "fontColor": '#0000ff',
-                    //     "fontSize": '14',
-                    //     'padding': '8',
-                    // },
+                    "scaleLabel":{
+                        "display":"true",
+                        "labelString": "CFS",
+                        "fontColor": '#0000ff',
+                        "fontSize": '14',
+                        'padding': '8',
+                    },
                     // "ticks": {
                     //     "display":true,
                     //     "fontSize": '14',
