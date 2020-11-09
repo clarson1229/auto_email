@@ -94,8 +94,8 @@ module.exports = (data, graphURL) => {
         bodyElement=`
             <div>
                 <div>
-                  <p>Total Volume ${data.totalVolume}</p>
-                  <p>Average Flowrate ${data.avgFlowRate}</p>
+                  <p>Total Volume ${data.totalVolume.toFixed(2)}</p>
+                  <p>Average Flowrate ${data.avgFlowRate.toFixed(2)}</p>
                 </div>
                 <div>
                   <table style="width:100%">
@@ -128,7 +128,7 @@ module.exports = (data, graphURL) => {
       </div>
     `
     let email = `   
-        <div>
+        <div style = "width: 40rem; font-size: 1.2rem; margin: 0 auto">
           ${header}
           ${graphImg}
           ${bodyElement}
