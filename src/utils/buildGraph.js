@@ -52,11 +52,7 @@ function createDailyFrom15(dwrData){
   }
 module.exports = async (data) => {
     const myChart = new QuickChart();
-    console.log('data before ', data.flowRate)
     const dailyData = createDailyFrom15(data.flowRate)
-    console.log('dailyData', dailyData)
-
-   
     
    
     myChart.setConfig({
@@ -65,15 +61,34 @@ module.exports = async (data) => {
             "labels":dailyData.labels, 
             "datasets": [{
                 "label":"Hock-Discharge", 
-                "data": dailyData.measures
+                "data": dailyData.measures,
+                "fill": false,
+                "pointRadius": 0, 
+                "yAxisID": 'discharge_point'
             }]
         },
         "options": {
+            "title": {
+                "text": 'Hock Hocking Mine Average Discharge', 
+                "display": true
+            },
             "scales": {
                 "yAxes": [{   
                     "type": 'linear',
                     "gridLines": {
                         "display": false
+                    },
+                    "scaleLabel":{
+                        "display":true,
+                        "labelString": "CFS",
+                        "fontColor": '#0000ff',
+                        "fontSize": '14',
+                        'padding': '8',
+                    },
+                    "ticks": {
+                        "display":true,
+                        "fontSize": '14',
+                        "fontColor": '#0000ff'
                     }, 
                 }],
                 "xAxes": [{
@@ -83,6 +98,15 @@ module.exports = async (data) => {
                     },
                     "gridLines": {
                             "display": false
+                    },
+                    "ticks": {
+                        "fontSize": '15',
+                    },
+                    "scaleLabel":{
+                        "display":true,
+                        "labelString": 'Date',
+                        "fontSize": '16',
+                        "fontColor": '#000'
                     },
                 }]
             }
