@@ -14,7 +14,6 @@ exports.handler = async (event, context)=>{
         if(event.headers.authorization.split(' ')[1] !== basicAuth) return {statusCode: 404};
 
         //Get data 
-        // Will call a function here to get the data
         const data = await fetchData();
         const graphURL = await buildGraph(data.dwrData)
         
