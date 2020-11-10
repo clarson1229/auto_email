@@ -129,7 +129,7 @@ module.exports = (data, graphURL) => {
        `
     }
     let footer=`
-      <div style= "font-size:16;">
+      <div style= "font-size:16; height:300px;">
         <p>MineWater LLC</p>
         <p>10924 Leroy Drive</p>
         <p>Northglenn, CO 80233 US</p>
@@ -140,7 +140,7 @@ module.exports = (data, graphURL) => {
       </div>
     `
     let email = `   
-        <div style = "width: 95%; height:4000px; font-size: 1.2rem;">
+        <div style = "width: 95%; font-size: 1.2rem;">
           ${header}
           ${graphImg}
           ${bodyElement}
