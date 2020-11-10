@@ -1,7 +1,6 @@
 const QuickChart = require('quickchart-js');
 // TODO get all 10 days instead of 9 
 function createDailyFrom15(dwrData){
-    console.log(dwrData)
     // DWR
       // 15 min data to hourly to daily 
     var item1,item2,item3,item4, count = 1, totalFlow = 0, hourCount=0, dailyArrayLabel=[], dailyArrayMeasure=[] ;
