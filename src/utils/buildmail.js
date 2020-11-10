@@ -130,7 +130,7 @@ module.exports = (data, graphURL) => {
        `
     }
     let footer=`
-      <div style=${footerStyle}>
+      <div style= "fontSize:14; color: #ff0000;">
         <p>MineWater LLC</p>
         <p>10924 Leroy Drive</p>
         <p>Northglenn, CO 80233 US</p>
