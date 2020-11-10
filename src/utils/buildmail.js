@@ -1,6 +1,14 @@
 //File - buildmail.js
 //creates the html email
 
+const styles= {
+    header:{
+      fontSize:16,
+      fontStyle: 'bold',
+      color: '#224f77',
+    }
+}
+
 function createRows15(dataMap){
     // DWR
       // 15 min data to hourly to daily 
@@ -67,7 +75,7 @@ function createRows15(dataMap){
 module.exports = (data, graphURL) => {
     
     let header=`
-      <div>
+      <div style=${styles.header}>
         <p>Hock Hocking Mine Discharge Report</p>
         <p>Reporting Period</p>
         <p>From to </p>

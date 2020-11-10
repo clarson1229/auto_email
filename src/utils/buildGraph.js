@@ -60,18 +60,19 @@ module.exports = async (data) => {
         "data": {
             "labels":dailyData.labels, 
             "datasets": [{
-                "label":"Hock-Discharge", 
+                "label":"Hock AVG Discharge Rate", 
                 "data": dailyData.measures,
                 "fill": "false",
                 "pointRadius": 0, 
+                "borderColor": '#0000ff'
                 // "yAxisID": 'discharge_point'
             }]
         },
         "options": {
-            // "title": {
-            //     "text": 'Hock Hocking Mine Average Discharge', 
-            //     "display": true
-            // },
+            "title": {
+                "text": 'Hock Hocking Mine Average Discharge Rate', 
+                "display": "true"
+            },
             "scales": {
                 "yAxes": [{   
                     "type": 'linear',
@@ -86,7 +87,7 @@ module.exports = async (data) => {
                         'padding': '8',
                     },
                     "ticks": {
-                        "display":true,
+                        "display":"true",
                         "fontSize": '14',
                         "fontColor": '#0000ff'
                     }, 
@@ -103,10 +104,10 @@ module.exports = async (data) => {
                         "fontSize": '15',
                     },
                     "scaleLabel":{
-                        "display":true,
+                        "display":"true",
                         "labelString": 'Date',
                         "fontSize": '16',
-                        "fontColor": '#000'
+                        "fontColor": '#0000ff'
                     },
                 }]
             }
