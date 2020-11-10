@@ -3,11 +3,16 @@
 
 const styles= {
     header:{
-      fontSize:16,
-      fontStyle: 'bold',
-      color: '#224f77',
+      "fontSize":"16",
+      "fontStyle": 'bold',
+      "color": '#224f77',
     }
 }
+const footerStyle=`
+  fontSize:14;
+  color: #ff0000;
+  `
+
 
 function createRows15(dataMap){
     // DWR
@@ -125,7 +130,7 @@ module.exports = (data, graphURL) => {
        `
     }
     let footer=`
-      <div>
+      <div style=${footerStyle}>
         <p>MineWater LLC</p>
         <p>10924 Leroy Drive</p>
         <p>Northglenn, CO 80233 US</p>
