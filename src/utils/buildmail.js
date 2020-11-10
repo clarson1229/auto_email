@@ -73,7 +73,7 @@ function createRows15(dataMap){
 module.exports = (data, graphURL) => {
     
     let header=`
-      <div style="font-style: bold; font-size:20; text-align:left; padding-left:10;" >
+      <div style="font-style: bold; font-size:20; text-align:left;" >
         <h1 style="font-style: bold;">Hock Hocking Mine Discharge Report</h1>
         <h2 style="font-style: bold;">Reporting Period From ${data.dates.dateOne} to ${data.dates.dateTwo}</h2>
       </div>
@@ -102,8 +102,8 @@ module.exports = (data, graphURL) => {
                   <h3>Volumetric Caculations</h3>
                   <table style="width:100%; border: 1px solid #000; border-collapse: collapse; ">
                     <tr style ="background-color: #9cc2e2; ">
-                      <th style="margin: 5; border: 1px solid #766d66; width:40%;">Average FlowRate </th>
-                      <th style="margin: 5; border: 1px solid #766d66; width:40%;">Total Volume Discharged</th>
+                      <th style="padding: 5; border: 1px solid #766d66; width:40%;">Average FlowRate </th>
+                      <th style="padding: 5; border: 1px solid #766d66; width:40%;">Total Volume Discharged</th>
                     </tr>
                     <tr >
                       <td style="text-align:center; padding: 5; border: 1px solid #766d66; width:40%;">${data.avgFlowRate.toFixed(2)} CFS</td>
@@ -144,7 +144,7 @@ module.exports = (data, graphURL) => {
       </div>
     `
     let email = `   
-        <div style = "width: 50rem; font-size: 1.2rem; margin: 0 auto">
+        <div style = "width: 50rem; font-size: 1.2rem;">
           ${header}
           ${graphImg}
           ${bodyElement}
