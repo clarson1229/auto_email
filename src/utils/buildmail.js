@@ -1,18 +1,8 @@
 //File - buildmail.js
 //creates the html email
-
-const styles= {
-    header:{
-      "fontSize":"16",
-      "fontStyle": 'bold',
-      "color": '#224f77',
-    }
-}
-const footerStyle=`
-  fontSize:14;
-  color: #ff0000;
-  `
-
+// TODO GEt all 10 days 
+// Passs in the date 
+// Finish styling 
 
 function createRows15(dataMap){
     // DWR
@@ -80,7 +70,7 @@ function createRows15(dataMap){
 module.exports = (data, graphURL) => {
     
     let header=`
-      <div style=${styles.header}>
+      <div style= "color: #224f77; fontStyle: bold; fontSize:16;" >
         <p>Hock Hocking Mine Discharge Report</p>
         <p>Reporting Period</p>
         <p>From to </p>
@@ -105,15 +95,15 @@ module.exports = (data, graphURL) => {
         )
 
         bodyElement=`
-            <div>
-                <div>
+            <div style="textAlign: center;">
+                <div style="marginTop: 10; paddingLeft: 10; backgroundColor: #488eca; textAlign: left; borderRadius: 10;display: inline; " >
                   <p>Total Volume ${data.totalVolume.toFixed(2)}</p>
                   <p>Average Flowrate ${data.avgFlowRate.toFixed(2)}</p>
                 </div>
                 <div>
-                  <table style="width:100%">
-                    <tr>
-                        <th>Date</th>
+                  <table style="width:100%; border: 1px solid #000; borderBottomWidth: 1; borderBottomColor: #766d66;">
+                    <tr style = " backgroundColor: #9cc2e2; ">
+                        <th style="borderRightColor: #766d66; borderRightWidth: 1; paddingLeft: 5; paddingTop: 5; ">Date</th>
                         <th>Total Discharged</th>
                     </tr>
                     ${rows}
@@ -130,7 +120,7 @@ module.exports = (data, graphURL) => {
        `
     }
     let footer=`
-      <div style= "fontSize:14; color: #ff0000;">
+      <div style= "fontSize:14;">
         <p>MineWater LLC</p>
         <p>10924 Leroy Drive</p>
         <p>Northglenn, CO 80233 US</p>
@@ -141,7 +131,7 @@ module.exports = (data, graphURL) => {
       </div>
     `
     let email = `   
-        <div style = "width: 40rem; font-size: 1.2rem; margin: 0 auto">
+        <div style = "width: 50rem; font-size: 1.2rem; margin: 0 auto">
           ${header}
           ${graphImg}
           ${bodyElement}
