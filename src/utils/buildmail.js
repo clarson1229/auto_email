@@ -1,8 +1,5 @@
 //File - buildmail.js
 //creates the html email
-// TODO GEt all 10 days 
-// Passs in the date 
-// Finish styling 
 
 function createRows15(dataMap){
     // DWR
@@ -82,7 +79,7 @@ module.exports = (data, graphURL) => {
     let graphImg=' '
     if (graphURL){
       graphImg = `
-        <img src=${graphURL}  width="100%" height="20%"/>
+        <img src=${graphURL}  width="100%" height="25%"/>
       ` 
     }
     //  width="500" height="600"   might go back in the image tag 
