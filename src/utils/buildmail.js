@@ -75,14 +75,14 @@ module.exports = (data, graphURL) => {
     let header=`
       <div style="font-style: bold; font-size:20; text-align:left;" >
         <h1 style="font-style: bold;">Hock Hocking Mine Discharge Report</h1>
-        <h2 style="font-style: bold;">Reporting Period From ${data.dates.dateOne} to ${data.dates.dateTwo}</h2>
+        <h3 style="font-style: bold;">Reporting Period From ${data.dates.dateOne} to ${data.dates.dateTwo}</h3>
       </div>
     `
     //Wrap tweet elements in a div
     let graphImg=' '
     if (graphURL){
       graphImg = `
-        <img src=${graphURL}  width="1000" height="600"/>
+        <img src=${graphURL}  width="80rem" height="600"/>
       ` 
     }
     //  width="500" height="600"   might go back in the image tag 
