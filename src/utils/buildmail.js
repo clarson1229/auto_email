@@ -8,7 +8,7 @@ function createRows15(dataMap){
     // DWR
       // 15 min data to hourly to daily 
     var item1,item2,item3,item4, count = 1, totalFlow = 0, multiplierValue, totalFlowUnits, hourCount=0, dailyArray=[];
-    const unitType= 'ACRE_FEET_P_DAY';
+    const unitType= dataMap.dwrData.flowRateUnits;
     if (unitType==='CFS'){
       multiplierValue=3600;
       totalFlowUnits='CF'; // depending on the flowrate units set the total flow units
@@ -67,6 +67,27 @@ function createRows15(dataMap){
     // combine data
     return ({'dwrData': dwrConvertedMap})
   }
+
+function convertTotalFlowDWR(dataTotalNum, currentUnits, newUnits){  
+  var convertedData;
+  
+  if(currentUnits=== 'GALLONS' && newUnits==='CF'){
+    convertedData= dataTotalNum* 0.13368;
+  }else if(currentUnits=== 'GALLONS' && newUnits==='ACRE_FEET'){
+    convertedData= dataTotalNum*0.0000030688832459704;
+  }else if(currentUnits=== 'CF' && newUnits==='GALLONS'){
+    convertedData= dataTotalNum* 7.48052;
+  }else if(currentUnits=== 'CF' && newUnits==='ACRE_FEET'){
+    convertedData= dataTotalNum*0.000022956840904921;
+  }else if(currentUnits=== 'ACRE_FEET' && newUnits==='CF'){
+    convertedData= dataTotalNum*43560.00044;
+  }else if(currentUnits=== 'ACRE_FEET' && newUnits==='GALLONS'){
+    convertedData= dataTotalNum*325851.43189;
+  }
+  
+  return (convertedData);
+}
+
 module.exports = (data, graphURL) => {
     
     let header=`
@@ -91,7 +112,7 @@ module.exports = (data, graphURL) => {
         const rows = dataMap.dwrData.map( (item, index) => 
         `<tr  key=${`Row-${index}`}>
           <td style="text-align:center; margin: 5; border: 1px solid #766d66; width:40%;">${item.dateTime}</td>
-          <td style="text-align:center; margin: 5; border: 1px solid #766d66; width:40%;">${item.measure.toFixed(2)} CF </td>
+          <td style="text-align:center; margin: 5; border: 1px solid #766d66; width:40%;">${(item.measure*0.000022956840904921).toFixed(2)} CF </td>
         </tr>`
         )
 
@@ -106,7 +127,7 @@ module.exports = (data, graphURL) => {
                     </tr>
                     <tr >
                       <td style="text-align:center; margin: 5; border: 1px solid #766d66; width:40%;">${data.avgFlowRate.toFixed(2)} CFS</td>
-                      <td style="text-align:center; margin: 5; border: 1px solid #766d66; width:40%;">${data.totalVolume.toFixed(2)} CF</td>
+                      <td style="text-align:center; margin: 5; border: 1px solid #766d66; width:40%;">${(data.totalVolume*0.000022956840904921).toFixed(2)} CF</td>
                     </tr>
                   </table>
                 </div>
