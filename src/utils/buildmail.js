@@ -70,7 +70,7 @@ function createRows15(dataMap){
 module.exports = (data, graphURL) => {
     
     let header=`
-      <div style= "color: #224f77; font-style: bold; font-size:16; text-align:center;" >
+      <div style= "color: #224f77; font-style: bold; font-size:18; text-align:center;" >
         <p>Hock Hocking Mine Discharge Report</p>
         <p>Reporting Period</p>
         <p>From to </p>
@@ -89,22 +89,30 @@ module.exports = (data, graphURL) => {
         dataMap= createRows15(data);
         const rows = dataMap.dwrData.map( (item, index) => 
         `<tr  key=${`Row-${index}`}>
-          <td >${item.dateTime}</td>
-          <td >${item.measure.toFixed(2)} ${data.dwrData.flowRateUnits} </td>
+          <td style="text-align:center; margin-left: 5; margin-top: 5; border: 1px solid #766d66; width:40%;">${item.dateTime}</td>
+          <td style="text-align:center; margin-left: 5; margin-top: 5; border: 1px solid #766d66; width:40%;">${item.measure.toFixed(2)} ${data.dwrData.flowRateUnits} </td>
         </tr>`
         )
 
         bodyElement=`
             <div style="textAlign: center;">
-                <div style="margin-top: 10; padding-left: 10; background-color: #488eca; text-align: left; border-radius: 10; display: flex; " >
-                  <p style="display: flex;">Total Volume ${data.totalVolume.toFixed(2)}</p>
-                  <p style="display: flex;">Average Flowrate ${data.avgFlowRate.toFixed(2)}</p>
+                <div>
+                  <table style="width:60%; border: 1px solid #000; ">
+                    <tr style ="background-color: #9cc2e2; ">
+                      <th style="margin-left: 5; margin-top: 5;border: 1px solid #766d66; ">Average FlowRate </th>
+                      <th style="margin-left: 5; margin-top: 5;border: 1px solid #766d66; ">Total Volume Discharged</th>
+                    </tr>
+                    <tr >
+                      <td style="text-align:center; margin-left: 5; margin-top: 5; border: 1px solid #766d66;">${data.avgFlowRate.toFixed(2)}</td>
+                      <td style="text-align:center; margin-left: 5; margin-top: 5; border: 1px solid #766d66;">${data.totalVolume.toFixed(2)}</td>
+                    </tr>
+                  </table>
                 </div>
                 <div>
-                  <table style="width:100%; border: 1px solid #000; ">
-                    <tr style ="background-color: #9cc2e2; border: 1px solid #766d66;">
-                        <th style="padding-left: 5; padding-top: 5; ">Date</th>
-                        <th style="padding-left: 5; padding-top: 5; ">Total Discharged</th>
+                  <table style="width:75%; border: 1px solid #000; ">
+                    <tr style ="background-color: #9cc2e2; ">
+                        <th style="margin-left: 5; margin-top: 5;border: 1px solid #766d66; width:40%;">Date</th>
+                        <th style="margin-left: 5; margin-top: 5;border: 1px solid #766d66; width:40%;">Total Discharged</th>
                     </tr>
                     ${rows}
                   </table>
