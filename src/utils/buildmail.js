@@ -82,7 +82,7 @@ module.exports = (data, graphURL) => {
     let graphImg=' '
     if (graphURL){
       graphImg = `
-        <img src=${graphURL}  width="80rem" height="600"/>
+        <img src=${graphURL}  width="100rem" height="600"/>
       ` 
     }
     //  width="500" height="600"   might go back in the image tag 
@@ -115,9 +115,9 @@ module.exports = (data, graphURL) => {
                   <h3>Daily Averages</h3>
                   <table style="width:100%; border: 1px solid #000;  border-collapse: collapse;">
                     <tr style ="background-color: #9cc2e2; ">
-                        <th style="margin: 5;border: 1px solid #766d66; width:30%;">Date</th>
-                        <th style="margin: 5;border: 1px solid #766d66; width:30%;">Average Flow Rate</th>
-                        <th style="margin: 5;border: 1px solid #766d66; width:40%;">Total Discharged</th>
+                        <th style="padding: 5;border: 1px solid #766d66; width:30%;">Date</th>
+                        <th style="padding: 5;border: 1px solid #766d66; width:30%;">Average Flow Rate</th>
+                        <th style="padding: 5;border: 1px solid #766d66; width:40%;">Total Discharged</th>
                     </tr>
                     ${rows}
                   </table>
