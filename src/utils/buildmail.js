@@ -93,10 +93,10 @@ module.exports = (data, graphURL) => {
         `<tr  key=${`Row-${index}`}>
           <td style="text-align:center; margin: 5; border: 1px solid #766d66; width:30%;">${item.dateTime}</td>
           <td style="text-align:center; margin: 5; border: 1px solid #766d66; width:20%;">${item.avgFlow.toFixed(2)} CFS</td>
-          <td style="text-align:center; margin: 5; border: 1px solid #766d66; width:40%;">${(item.measure*0.000022956840904921).toFixed(2)} ACRE FEET </td>
+          <td style="text-align:center; margin: 5; border: 1px solid #766d66; width:40%;"> ACRE FEET </td>
         </tr>`
         )
-
+        // ${(item.measure*0.000022956840904921).toFixed(2)}
         bodyElement=`
             <div style="textAlign: center;">
                 <div>
