@@ -8,7 +8,7 @@ function createRows15(dataMap){
     // DWR
       // 15 min data to hourly to daily 
     var item1,item2,item3,item4, count = 1, totalFlow = 0, multiplierValue, totalFlowUnits, hourCount=0, dailyArray=[];
-    const unitType= dataMap.dwrData.flowRateUnits;
+    const unitType= 'ACRE_FEET_P_DAY';
     if (unitType==='CFS'){
       multiplierValue=3600;
       totalFlowUnits='CF'; // depending on the flowrate units set the total flow units

@@ -95,7 +95,7 @@ module.exports = async (data) => {
     if (dataResult.error === false ){
         var dataArray = dataResult.data.map((item) =>{ return ({'dateTime': item.measDateTime, 'measure': item.measValue}) });
         var tempFullData= {'error': false, 'errorMsg': '', 'flowRate': dataArray, 'flowRateUnits': 'CFS'}
-        var totalVolume=calcVolumeData15Min(tempFullData.flowRate, tempFullData.flowRateUnits); // here 
+        var totalVolume=calcVolumeData15Min(tempFullData.flowRate,'ACRE_FEET_P_DAY' ); // here 
         var avgFlowRate = calcAvgFlowRate(tempFullData.flowRate)
         return {
           'error': false, 
