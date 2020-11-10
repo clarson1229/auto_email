@@ -82,7 +82,7 @@ module.exports = (data, graphURL) => {
     let graphImg=' '
     if (graphURL){
       graphImg = `
-        <img src=${graphURL}  width="100rem" height="600"/>
+        <img src=${graphURL}  width="90%" height="600"/>
       ` 
     }
     //  width="500" height="600"   might go back in the image tag 
