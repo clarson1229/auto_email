@@ -6,6 +6,7 @@ const createHtmlEmail = require('./buildmail');
 sgMail.setApiKey(process.env.GATSBY_SENDGRID_KEY); 
 
 module.exports = (data, graphURL) => {
+    console.log(process.env.GATSBY_MY_EMAIL)
     return sgMail.send({ 
             to: process.env.GATSBY_SEND_EMAIL,
             from: process.env.GATSBY_MY_EMAIL,
