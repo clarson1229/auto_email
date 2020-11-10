@@ -82,7 +82,7 @@ module.exports = (data, graphURL) => {
     let graphImg=' '
     if (graphURL){
       graphImg = `
-        <img src=${graphURL}  width="1400" height="600"/>
+        <img src=${graphURL}  width="1000" height="600"/>
       ` 
     }
     //  width="500" height="600"   might go back in the image tag 
@@ -91,33 +91,32 @@ module.exports = (data, graphURL) => {
         dataMap= createRows15(data);
         const rows = dataMap.dwrData.map( (item, index) => 
         `<tr  key=${`Row-${index}`}>
-          <td style="text-align:center; margin: 5; border: 1px solid #766d66; width:30%;">${item.dateTime}</td>
-          <td style="text-align:center; margin: 5; border: 1px solid #766d66; width:20%;">${item.avgFlow.toFixed(2)} CFS</td>
-          <td style="text-align:center; margin: 5; border: 1px solid #766d66; width:40%;">${(item.measure*0.000022956840904921).toFixed(2)} ACRE FEET </td>
+          <td style="text-align:center; padding: 5; border: 1px solid #766d66; width:30%;">${item.dateTime}</td>
+          <td style="text-align:center; padding: 5; border: 1px solid #766d66; width:30%;">${item.avgFlow.toFixed(2)} CFS</td>
+          <td style="text-align:center; padding: 5; border: 1px solid #766d66; width:40%;">${(item.measure*0.000022956840904921).toFixed(2)} ACRE FEET </td>
         </tr>`
         ).join('')
-        // ${(item.measure*0.000022956840904921).toFixed(2)}
         bodyElement=`
             <div style="textAlign: center;">
                 <div>
                   <h3>Volumetric Caculations</h3>
-                  <table style="width:75%; border: 1px solid #000; border-collapse: collapse; ">
+                  <table style="width:100%; border: 1px solid #000; border-collapse: collapse; ">
                     <tr style ="background-color: #9cc2e2; ">
                       <th style="margin: 5; border: 1px solid #766d66; width:40%;">Average FlowRate </th>
                       <th style="margin: 5; border: 1px solid #766d66; width:40%;">Total Volume Discharged</th>
                     </tr>
                     <tr >
-                      <td style="text-align:center; margin: 5; border: 1px solid #766d66; width:40%;">${data.avgFlowRate.toFixed(2)} CFS</td>
-                      <td style="text-align:center; margin: 5; border: 1px solid #766d66; width:40%;">${(data.totalVolume*0.000022956840904921).toFixed(2)} ACRE FEET</td>
+                      <td style="text-align:center; padding: 5; border: 1px solid #766d66; width:40%;">${data.avgFlowRate.toFixed(2)} CFS</td>
+                      <td style="text-align:center; padding: 5; border: 1px solid #766d66; width:40%;">${(data.totalVolume*0.000022956840904921).toFixed(2)} ACRE FEET</td>
                     </tr>
                   </table>
                 </div>
                 <div>
                   <h3>Daily Averages</h3>
-                  <table style="width:75%; border: 1px solid #000;  border-collapse: collapse;">
+                  <table style="width:100%; border: 1px solid #000;  border-collapse: collapse;">
                     <tr style ="background-color: #9cc2e2; ">
                         <th style="margin: 5;border: 1px solid #766d66; width:30%;">Date</th>
-                        <th style="margin: 5;border: 1px solid #766d66; width:20%;">Average Flow Rate</th>
+                        <th style="margin: 5;border: 1px solid #766d66; width:30%;">Average Flow Rate</th>
                         <th style="margin: 5;border: 1px solid #766d66; width:40%;">Total Discharged</th>
                     </tr>
                     ${rows}
