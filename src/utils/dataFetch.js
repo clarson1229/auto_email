@@ -101,7 +101,12 @@ module.exports = async (data) => {
           'error': false, 
           'totalVolume': totalVolume.totalFlow, 
           'avgFlowRate': avgFlowRate, 
-          'dwrData': tempFullData}
+          'dwrData': tempFullData, 
+          'dates':{
+            'dateOne':dateOne,
+            'dateTwo':dateTwo,
+
+          }}
     }else{
         return {'error': true, 'errorMsg': dataResult.errorMsg, 'errorObject': dataResult.errorObject}
     }

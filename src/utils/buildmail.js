@@ -73,7 +73,7 @@ module.exports = (data, graphURL) => {
       <div style= "color: #224f77; font-style: bold; font-size:18; text-align:left; padding-left:10;" >
         <p>Hock Hocking Mine Discharge Report</p>
         <p>Reporting Period</p>
-        <p>From to </p>
+        <p>From ${data.dates.dateOne} to ${data.dates.dateTwo} </p>
       </div>
     `
     //Wrap tweet elements in a div
@@ -87,10 +87,11 @@ module.exports = (data, graphURL) => {
     let bodyElement = ' '
     if (data.error === false){
         dataMap= createRows15(data);
+        console.log(dataMap.dwrData);
         const rows = dataMap.dwrData.map( (item, index) => 
         `<tr  key=${`Row-${index}`}>
           <td style="text-align:center; margin-left: 5; margin-top: 5; border: 1px solid #766d66; width:40%;">${item.dateTime}</td>
-          <td style="text-align:center; margin-left: 5; margin-top: 5; border: 1px solid #766d66; width:40%;">${item.measure.toFixed(2)} ${data.dwrData.flowRateUnits} </td>
+          <td style="text-align:center; margin-left: 5; margin-top: 5; border: 1px solid #766d66; width:40%;">${item.measure.toFixed(2)} CF </td>
         </tr>`
         )
 
@@ -100,12 +101,12 @@ module.exports = (data, graphURL) => {
                   <h3>Volumetric Caculations</h3>
                   <table style="width:75%; border: 1px solid #000; border-collapse: collapse; ">
                     <tr style ="background-color: #9cc2e2; ">
-                      <th style="margin-left: 5; margin-top: 5;border: 1px solid #766d66; ">Average FlowRate </th>
-                      <th style="margin-left: 5; margin-top: 5;border: 1px solid #766d66; ">Total Volume Discharged</th>
+                      <th style="margin-left: 5; margin-top: 5;border: 1px solid #766d66; width:40%;">Average FlowRate </th>
+                      <th style="margin-left: 5; margin-top: 5;border: 1px solid #766d66; width:40%;">Total Volume Discharged</th>
                     </tr>
                     <tr >
-                      <td style="text-align:center; margin-left: 5; margin-top: 5; border: 1px solid #766d66;">${data.avgFlowRate.toFixed(2)}</td>
-                      <td style="text-align:center; margin-left: 5; margin-top: 5; border: 1px solid #766d66;">${data.totalVolume.toFixed(2)}</td>
+                      <td style="text-align:center; margin-left: 5; margin-top: 5; border: 1px solid #766d66;width:40%;">${data.avgFlowRate.toFixed(2)} CFS</td>
+                      <td style="text-align:center; margin-left: 5; margin-top: 5; border: 1px solid #766d66;width:40%;">${data.totalVolume.toFixed(2)} CF</td>
                     </tr>
                   </table>
                 </div>
