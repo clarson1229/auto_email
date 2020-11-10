@@ -70,10 +70,10 @@ function createRows15(dataMap){
 module.exports = (data, graphURL) => {
     
     let header=`
-      <div style= "color: #224f77; font-style: bold; font-size:18; text-align:left; padding-left:10;" >
-        <p>Hock Hocking Mine Discharge Report</p>
-        <p>Reporting Period</p>
-        <p>From ${data.dates.dateOne} to ${data.dates.dateTwo} </p>
+      <div style="font-style: bold; font-size:20; text-align:left; padding-left:10;" >
+        <h1 style="font-style: bold;">Hock Hocking Mine Discharge Report</h1>
+        <h2 style="font-style: bold;">Reporting Period</h2>
+        <h2 style="font-style: bold;">From ${data.dates.dateOne} to ${data.dates.dateTwo} </h2>
       </div>
     `
     //Wrap tweet elements in a div
@@ -90,8 +90,8 @@ module.exports = (data, graphURL) => {
         console.log(dataMap.dwrData);
         const rows = dataMap.dwrData.map( (item, index) => 
         `<tr  key=${`Row-${index}`}>
-          <td style="text-align:center; margin-left: 5; margin-top: 5; border: 1px solid #766d66; width:40%;">${item.dateTime}</td>
-          <td style="text-align:center; margin-left: 5; margin-top: 5; border: 1px solid #766d66; width:40%;">${item.measure.toFixed(2)} CF </td>
+          <td style="text-align:center; margin: 5; border: 1px solid #766d66; width:40%;">${item.dateTime}</td>
+          <td style="text-align:center; margin: 5; border: 1px solid #766d66; width:40%;">${item.measure.toFixed(2)} CF </td>
         </tr>`
         )
 
@@ -101,12 +101,12 @@ module.exports = (data, graphURL) => {
                   <h3>Volumetric Caculations</h3>
                   <table style="width:75%; border: 1px solid #000; border-collapse: collapse; ">
                     <tr style ="background-color: #9cc2e2; ">
-                      <th style="margin-left: 5; margin-top: 5;border: 1px solid #766d66; width:40%;">Average FlowRate </th>
-                      <th style="margin-left: 5; margin-top: 5;border: 1px solid #766d66; width:40%;">Total Volume Discharged</th>
+                      <th style="margin: 5; border: 1px solid #766d66; width:40%;">Average FlowRate </th>
+                      <th style="margin: 5; border: 1px solid #766d66; width:40%;">Total Volume Discharged</th>
                     </tr>
                     <tr >
-                      <td style="text-align:center; margin-left: 5; margin-top: 5; border: 1px solid #766d66;width:40%;">${data.avgFlowRate.toFixed(2)} CFS</td>
-                      <td style="text-align:center; margin-left: 5; margin-top: 5; border: 1px solid #766d66;width:40%;">${data.totalVolume.toFixed(2)} CF</td>
+                      <td style="text-align:center; margin: 5; border: 1px solid #766d66; width:40%;">${data.avgFlowRate.toFixed(2)} CFS</td>
+                      <td style="text-align:center; margin: 5; border: 1px solid #766d66; width:40%;">${data.totalVolume.toFixed(2)} CF</td>
                     </tr>
                   </table>
                 </div>
@@ -114,8 +114,8 @@ module.exports = (data, graphURL) => {
                   <h3>Daily Averages</h3>
                   <table style="width:75%; border: 1px solid #000;  border-collapse: collapse;">
                     <tr style ="background-color: #9cc2e2; ">
-                        <th style="margin-left: 5; margin-top: 5;border: 1px solid #766d66; width:40%;">Date</th>
-                        <th style="margin-left: 5; margin-top: 5;border: 1px solid #766d66; width:40%;">Total Discharged</th>
+                        <th style="margin: 5;border: 1px solid #766d66; width:40%;">Date</th>
+                        <th style="margin: 5;border: 1px solid #766d66; width:40%;">Total Discharged</th>
                     </tr>
                     ${rows}
                   </table>
@@ -131,7 +131,7 @@ module.exports = (data, graphURL) => {
        `
     }
     let footer=`
-      <div style= "font-size:14;">
+      <div style= "font-size:16;">
         <p>MineWater LLC</p>
         <p>10924 Leroy Drive</p>
         <p>Northglenn, CO 80233 US</p>

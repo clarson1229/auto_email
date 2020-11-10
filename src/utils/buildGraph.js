@@ -72,7 +72,8 @@ module.exports = async (data) => {
         "options": {
             "title": {
                 "text": 'Hock Hocking Mine Average Discharge Rate', 
-                "display": "true"
+                "display": "true",
+                "fontSize": '18',
             },
             "scales": {
                 "yAxes": [{   
@@ -103,6 +104,7 @@ module.exports = async (data) => {
                     },
                     "ticks": {
                         "fontSize": '15',
+                        "fontColor": '#0000ff'
                     },
                     "scaleLabel":{
                         "display":"true",
