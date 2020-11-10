@@ -70,7 +70,7 @@ function createRows15(dataMap){
 module.exports = (data, graphURL) => {
     
     let header=`
-      <div style= "color: #224f77; font-style: bold; font-size:18; text-align:center;" >
+      <div style= "color: #224f77; font-style: bold; font-size:18; text-align:left; padding-left:10;" >
         <p>Hock Hocking Mine Discharge Report</p>
         <p>Reporting Period</p>
         <p>From to </p>
@@ -97,7 +97,8 @@ module.exports = (data, graphURL) => {
         bodyElement=`
             <div style="textAlign: center;">
                 <div>
-                  <table style="width:60%; border: 1px solid #000; ">
+                  <h3>Volumetric Caculations</h3>
+                  <table style="width:75%; border: 1px solid #000; border-collapse: collapse; ">
                     <tr style ="background-color: #9cc2e2; ">
                       <th style="margin-left: 5; margin-top: 5;border: 1px solid #766d66; ">Average FlowRate </th>
                       <th style="margin-left: 5; margin-top: 5;border: 1px solid #766d66; ">Total Volume Discharged</th>
@@ -109,7 +110,8 @@ module.exports = (data, graphURL) => {
                   </table>
                 </div>
                 <div>
-                  <table style="width:75%; border: 1px solid #000; ">
+                  <h3>Daily Averages</h3>
+                  <table style="width:75%; border: 1px solid #000;  border-collapse: collapse;">
                     <tr style ="background-color: #9cc2e2; ">
                         <th style="margin-left: 5; margin-top: 5;border: 1px solid #766d66; width:40%;">Date</th>
                         <th style="margin-left: 5; margin-top: 5;border: 1px solid #766d66; width:40%;">Total Discharged</th>
