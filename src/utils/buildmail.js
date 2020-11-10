@@ -75,14 +75,13 @@ module.exports = (data, graphURL) => {
         <h3 style="font-style: bold;">Reporting Period From ${data.dates.dateOne} to ${data.dates.dateTwo}</h3>
       </div>
     `
-    //Wrap tweet elements in a div
     let graphImg=' '
     if (graphURL){
       graphImg = `
-        <img src=${graphURL}  width="100%" height="25%"/>
+        <img src=${graphURL}  width="100%" height="30%"/>
       ` 
     }
-    //  width="500" height="600"   might go back in the image tag 
+
     let bodyElement = ' '
     if (data.error === false){
         dataMap= createRows15(data);
