@@ -140,7 +140,7 @@ module.exports = (data, graphURL) => {
       </div>
     `
     let email = `   
-        <div style = "width: 95%; font-size: 1.2rem;">
+        <div style = "width: 95%; height: 100% font-size: 1.2rem;">
           ${header}
           ${graphImg}
           ${bodyElement}
